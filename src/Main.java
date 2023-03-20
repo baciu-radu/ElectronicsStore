@@ -1,5 +1,6 @@
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +31,11 @@ public class Main {
         electronicsList.add(electronics6);
 
 
+//Print all the electronics manufactured after a certain date and are from the same manufacturer
+
         System.out.println("The electronics manufactured by Dell and produced after the year 2009 are: ");
+
+
         for (Electronics electronics : electronicsList) {
             if ((electronics.manufacturer == "Dell") && (electronics.dateOfProduction.compareTo(df.parse("2009-01-01")) > 0)) {
                 System.out.println(electronics);
@@ -38,11 +43,12 @@ public class Main {
 
         }
 
+//        Create a new list with several laptops and filter the ones that have full HD screen and intel CPU
         List<Laptop> laptopList = new ArrayList<Laptop>();
 
         Laptop laptop1 = new Laptop("Dell", df.parse("2005-05-11"), 9815, cpuAMD, ram16, fullHD);
         laptopList.add(laptop1);
-        Laptop laptop2 = new Laptop("HP", df.parse("2019-02-11"), 8454, cpuIntel, ram32, fullHD);
+        Laptop laptop2 = new Laptop("HP", df.parse("2019-02-11"), 8454, cpuIntel, ram32, new Screen("Full HD"));
         laptopList.add(laptop2);
         Laptop laptop3 = new Laptop("Dell", df.parse("2022-05-21"), 18202, cpuAMD, ram64, ultraHD);
         laptopList.add(laptop3);
