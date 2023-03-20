@@ -1,22 +1,27 @@
-public class Screen {
-    String resolution;
+public enum Screen {
+    FULL_HD(1920, 1080),
+    ULTRA_HD(4096, 2560);
 
-    public Screen(String resolution) {
-        this.resolution = resolution;
+    private final int width;
+    private final int height;
+
+    Screen(int width, int height) {
+        this.width = width;
+        this.height = height;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if(!(obj instanceof Screen)){
-            return false;
-        }
-        return resolution.equals(((Screen)obj).resolution);
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
     }
 
     @Override
     public String toString() {
         return "Screen{" +
-                "resolution='" + resolution + '\'' +
+                "resolution='" + this.name() + '\'' +
                 '}';
     }
 }

@@ -1,16 +1,11 @@
-public class Cpu {
-
-
-    String brand;
-
-    public Cpu(String brand) {
-        this.brand = brand;
-    }
+public enum Cpu {
+    INTEL,
+    AMD;
 
     @Override
     public String toString() {
         return "Cpu{" +
-                "brand='" + brand + '\'' +
+                "brand='" + this.name() + '\'' +
                 '}';
     }
 }

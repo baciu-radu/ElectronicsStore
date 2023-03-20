@@ -6,7 +6,6 @@ public class Electronics {
     Date dateOfProduction;
     int price;
 
-
     public Electronics(String manufacturer, Date dateOfProduction, int price) {
         this.manufacturer = manufacturer;
         this.dateOfProduction = dateOfProduction;

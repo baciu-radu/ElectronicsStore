@@ -1,14 +1,17 @@
-public class RamMemory {
-    int size;
+public enum RamMemory {
+    MIN(16),
+    MED(32),
+    MAX(64);
+    private int amount;
 
-    public RamMemory(int size) {
-        this.size = size;
+    RamMemory(int amount) {
+        this.amount = amount;
     }
 
     @Override
     public String toString() {
         return "RamMemory{" +
-                "size=" + size +
+                "size=" + this.amount +
                 '}';
     }
 }
